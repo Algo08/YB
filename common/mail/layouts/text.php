@@ -1,12 +1,3 @@
-<?php
-
-/** @var \yii\web\View $this view component instance */
-/** @var \yii\mail\MessageInterface $message the message being composed */
-/** @var string $content main view render result */
-
-?>
-<?php $this->beginPage() ?>
-<?php $this->beginBody() ?>
 <style type="text/css">
     @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 
@@ -278,5 +269,3 @@
     <!-- product specificaiton -->
 </div>
 <!-- wrapper-->
-<?php $this->endBody() ?>
-<?php $this->endPage() ?>
