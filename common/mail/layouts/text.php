@@ -1,6 +1,13 @@
-<html>
-<head>
-    <style type="text/css">
+<?php
+
+/** @var \yii\web\View $this view component instance */
+/** @var \yii\mail\MessageInterface $message the message being composed */
+/** @var string $content main view render result */
+
+?>
+<?php $this->beginPage() ?>
+<?php $this->beginBody() ?>
+<style type="text/css">
         @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 
         *,
@@ -240,30 +247,30 @@
 </head>
 
 <body>
-    <div class=" wrapper">
-        <div class=" overviewInfo">
-            <div class=" productinfo">
-                <div class=" grouptext">
+    <div class="asd wrapper">
+        <div class="asd overviewInfo">
+            <div class="asd productinfo">
+                <div class="asd grouptext">
                     <h3>Fio:</h3>
                     <p><?=$model->full_name?></p>
                 </div>
-                <div class=" grouptext">
+                <div class="asd grouptext">
                     <h3>Email:</h3>
                     <p><?=$model->email?></p>
                 </div>
-                <div class=" grouptext">
+                <div class="asd grouptext">
                     <h3>Number</h3>
                     <p><?=$model->number?></p>
                 </div>
 
-                <div class=" productImage">
+                <div class="asd productImage">
                     <img src="https://i.imgur.com/ckSgzLQ.png" alt="product: ps5 controller image" />
                 </div>
             </div>
         </div>
         <!-- overview info -->
 
-        <div class=" productSpecifications">
+        <div class="asd productSpecifications">
             <h1>Message</h1>
             <p>
                 <?=$model->text?>
@@ -273,6 +280,5 @@
         <!-- product specificaiton -->
     </div>
     <!-- wrapper-->
-</body>
-
-</html>
+<?php $this->endBody() ?>
+<?php $this->endPage() ?>
