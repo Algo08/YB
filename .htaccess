@@ -1,0 +1,10 @@
+ # prevent directory listings
+Options -Indexes
+IndexIgnore */*
+
+# follow symbolic links
+Options FollowSymlinks
+RewriteEngine on
+RewriteRule ^payme(/.+)?$ payme/web/$1 [S=2]
+RewriteRule ^admin(/.+)?$ backend/web/$1 [S=1]
+RewriteRule ^(.+)?$ frontend/web/$1
