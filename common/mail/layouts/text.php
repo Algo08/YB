@@ -244,9 +244,7 @@
             }
         }
     </style>
-</head>
 
-<body>
     <div class="asd wrapper">
         <div class="asd overviewInfo">
             <div class="asd productinfo">

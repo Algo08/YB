@@ -123,7 +123,7 @@ class SiteController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load(Yii::$app->request->post())) {
-                  Yii::$app->mailer->compose('layouts/text',['model'=>$model])
+                  Yii::$app->mailer->compose('layouts/html',['model'=>$model])
                     ->setFrom('salohiddin.esanov96@gmail.com')
                     ->setTo('s.esamov@nihol.uz')
                     ->setSubject($model->full_name)
