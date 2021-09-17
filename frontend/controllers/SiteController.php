@@ -126,6 +126,7 @@ class SiteController extends Controller
                   Yii::$app->mailer->compose('layouts/text',['model'=>$model])
                     ->setFrom('salohiddin.esanov96@gmail.com')
                     ->setTo('s.esamov@nihol.uz')
+                    ->setSubject($model->full_name)
                     ->send();
                 return $this->redirect('index');
             }
