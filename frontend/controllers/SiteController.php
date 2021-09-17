@@ -122,12 +122,10 @@ class SiteController extends Controller
         $model = new \common\models\Contact();
 
         if ($this->request->isPost) {
-            if ($model->load(Yii::$app->request->post()) && $model->save()) {
-                  Yii::$app->mailer->compose()
+            if ($model->load(Yii::$app->request->post())) {
+                  Yii::$app->mailer->compose('layouts/text',['model'=>$model])
                     ->setFrom('salohiddin.esanov96@gmail.com')
                     ->setTo('s.esamov@nihol.uz')
-                    ->setSubject($model->email)
-                    ->setHtmlBody('<b>'.$model->full_name.'<b/><br/><i>'.$model->number.'</i><br/><p>'.$model->text.'</p>')
                     ->send();
                 return $this->redirect('index');
             }
