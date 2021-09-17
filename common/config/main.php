@@ -25,8 +25,8 @@ return [
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.gmail.com',
-                'username' => 'geostudyuz@gmail.com',
-                'password' => 'omnsnesatlfabwcc',
+                'username' => 'salohiddin.esanov96@gmail.com',
+                'password' => 'mvggotblssimjvzc',
                 'port' => '587',
                 'encryption' => 'tls',
             ],

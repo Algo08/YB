@@ -124,8 +124,8 @@ class SiteController extends Controller
         if ($this->request->isPost) {
             if ($model->load(Yii::$app->request->post()) && $model->save()) {
                   Yii::$app->mailer->compose()
-                    ->setFrom('geostudyuz@gmail.com')
-                    ->setTo('salohiddin.esanov96@gmail.com')
+                    ->setFrom('salohiddin.esanov96@gmail.com')
+                    ->setTo('s.esamov@nihol.uz')
                     ->setSubject('text')
                     ->send();
                 return $this->redirect('index');
