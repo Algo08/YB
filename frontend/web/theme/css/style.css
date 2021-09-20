@@ -2330,6 +2330,9 @@ button.close {
   -webkit-transition: opacity .15s linear;
   transition: opacity .15s linear;
 }
+.fade.in {
+    opacity: 1 !important;
+}
 
 
 /****** about us container ******/

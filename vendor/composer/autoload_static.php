@@ -46,6 +46,10 @@ class ComposerStaticInitfad025b7d7030531f5a419c8cf588fcb
         array (
             'marqu3s\\summernote\\' => 19,
         ),
+        'l' => 
+        array (
+            'libphonenumber\\' => 15,
+        ),
         'f' => 
         array (
             'fv\\yii\\croppie\\' => 15,
@@ -55,6 +59,10 @@ class ComposerStaticInitfad025b7d7030531f5a419c8cf588fcb
             'codemix\\localeurls\\' => 19,
             'cinghie\\multilanguage\\' => 22,
             'cebe\\markdown\\' => 14,
+        ),
+        'b' => 
+        array (
+            'borales\\extensions\\phoneInput\\' => 30,
         ),
         'W' => 
         array (
@@ -100,6 +108,7 @@ class ComposerStaticInitfad025b7d7030531f5a419c8cf588fcb
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
+            'Giggsey\\Locale\\' => 15,
         ),
         'F' => 
         array (
@@ -166,6 +175,10 @@ class ComposerStaticInitfad025b7d7030531f5a419c8cf588fcb
         array (
             0 => __DIR__ . '/..' . '/marqu3s/yii2-summernote',
         ),
+        'libphonenumber\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/giggsey/libphonenumber-for-php/src',
+        ),
         'fv\\yii\\croppie\\' => 
         array (
             0 => __DIR__ . '/..' . '/flaviovs/yii2-croppie/src',
@@ -181,6 +194,10 @@ class ComposerStaticInitfad025b7d7030531f5a419c8cf588fcb
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'borales\\extensions\\phoneInput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/borales/yii2-phone-input/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -290,6 +307,10 @@ class ComposerStaticInitfad025b7d7030531f5a419c8cf588fcb
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'Giggsey\\Locale\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/giggsey/locale/src',
         ),
         'Faker\\' => 
         array (

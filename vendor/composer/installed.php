@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => '1.0.0+no-version-set',
-    'version' => '1.0.0.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '61520634731640a37cef814158d6c4f0ad4b4926',
     'name' => 'yiisoft/yii2-app-advanced',
   ),
   'versions' => 
@@ -19,6 +19,15 @@
       array (
       ),
       'reference' => '2391482cd003dfdc36b679b27e9f5326bd656acd',
+    ),
+    'borales/yii2-phone-input' => 
+    array (
+      'pretty_version' => '0.3.0',
+      'version' => '0.3.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '563bfab9afed717422e1db848180c6dde706a907',
     ),
     'bower-asset/codemirror' => 
     array (
@@ -55,6 +64,15 @@
       array (
       ),
       'reference' => '5e670ad62f50c738388d4dcec78d2888505ad77b',
+    ),
+    'bower-asset/intl-tel-input' => 
+    array (
+      'pretty_version' => 'v16.1.0',
+      'version' => '16.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '52211bd88178f2cbed022b24d154ef980aef2878',
     ),
     'bower-asset/jquery' => 
     array (
@@ -255,6 +273,24 @@
       ),
       'reference' => '9214a45a23f168cb857f6acc147737f8105d0104',
     ),
+    'giggsey/libphonenumber-for-php' => 
+    array (
+      'pretty_version' => '8.12.32',
+      'version' => '8.12.32.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'b13fcfd3ebfef44486fc0bd1f830737047205ae3',
+    ),
+    'giggsey/locale' => 
+    array (
+      'pretty_version' => '2.0',
+      'version' => '2.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f28e0fa55e842afe034a7671df79757731467031',
+    ),
     'guzzlehttp/psr7' => 
     array (
       'pretty_version' => '2.0.0',
@@ -361,12 +397,12 @@
     ),
     'phpdocumentor/type-resolver' => 
     array (
-      'pretty_version' => '1.4.0',
-      'version' => '1.4.0.0',
+      'pretty_version' => '1.5.0',
+      'version' => '1.5.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '6a467b8989322d92aa1c8bf2bebcc6e5c2ba55c0',
+      'reference' => '30f38bffc6f24293dadd1823936372dfa9e86e2f',
     ),
     'phpspec/php-diff' => 
     array (
@@ -846,12 +882,12 @@
     ),
     'yiisoft/yii2-app-advanced' => 
     array (
-      'pretty_version' => '1.0.0+no-version-set',
-      'version' => '1.0.0.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '61520634731640a37cef814158d6c4f0ad4b4926',
     ),
     'yiisoft/yii2-bootstrap4' => 
     array (

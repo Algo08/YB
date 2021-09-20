@@ -93,4 +93,13 @@ return array (
       '@cinghie/multilanguage' => $vendorDir . '/cinghie/yii2-multilanguage',
     ),
   ),
+  'borales/yii2-phone-input' => 
+  array (
+    'name' => 'borales/yii2-phone-input',
+    'version' => '0.3.0.0',
+    'alias' => 
+    array (
+      '@borales/extensions/phoneInput' => $vendorDir . '/borales/yii2-phone-input/src',
+    ),
+  ),
 );

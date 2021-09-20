@@ -14,6 +14,7 @@ class AppAsset extends AssetBundle
     public $css = [
         'theme/css/style.css',
         'theme/css/animate.css',
+        'theme/css/ionicons.min.css',
         'css/site.css',
     ];
     public $js = [

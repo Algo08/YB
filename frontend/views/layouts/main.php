@@ -51,8 +51,8 @@ AppAsset::register($this);
                         <?php 
                            $menuItems = [
                               ['label' => 'Home', 'url' => ['/']],
-                              ['label' => 'About', 'url' => ['#about']],
-                              ['label' => 'Contact', 'url' => ['/site/contact']],
+                              ['label' => 'About', 'url' => ['/#about']],
+                              ['label' => 'Contact', 'url' => ['/contact']],
                            ];
                            $menuItems[] =
                               '<li class="nav-item">'.

@@ -40,10 +40,11 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-
-
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
+    <li class="nav-item">
+        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/address')?>">
+            <i class="fas fa-map-marker"></i>
+            <span>Address</span></a>
+    </li>
 
     <!-- Sidebar Toggler (Sidebar) -->
     <div class="text-center d-none d-md-inline">
