@@ -13,10 +13,10 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'theme/css/style.css',
-        'theme/css/animate.css',
         'theme/css/ionicons.min.css',
         'css/site.css',
-    ];
+        'theme/css/animate.css',
+        ];
     public $js = [
         'theme/js/superfish.js',
         'theme/js/wow.js',

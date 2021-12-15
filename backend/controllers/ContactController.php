@@ -37,8 +37,7 @@ class ContactController extends \yii\web\Controller
     public function actionReaded($id)
     {
         $contact = Contact::findOne($id);
-        $contact->read = 1;
-        $contact->save();
+        $contact->updateAttributes(['read' => 1]);
         return $this->redirect(['view']);
     }
 

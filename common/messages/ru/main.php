@@ -18,11 +18,17 @@
  */
 return [
     'uz' => 'ru',
-    'Bosh sahifa' => 'Домой',
+    'Bosh sahifa' => 'Главная',
     'Biz haqimizda' => 'О нас',
     'Aloqa' => 'Контакт',
     'Chiqish' => 'Выход',
     'Bo‘limlar' => 'Разделы',
     'Batafsil' => 'Больше',
-
+    'Email' => 'Эл. адрес',
+    'To‘liq ism' => 'Полное имя',
+    'Xabar' => 'Сообщение',
+    'Telefon raqam' => 'Номер телефона',
+    'Yuborish' => 'Отправить',
+    'Barcha huquqlar himoyalangan!' => 'Все права защищены!',
+    'Manzil' => 'Место нахождения',
 ];

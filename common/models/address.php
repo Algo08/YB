@@ -14,6 +14,7 @@ use Yii;
  * @property string $address_uz
  * @property string $address_ru
  * @property string $address_en
+ * @property string $email
  * @property string $location
  */
 class Address extends \yii\db\ActiveRecord
@@ -35,6 +36,7 @@ class Address extends \yii\db\ActiveRecord
             [['phone', 'address_uz', 'location'], 'required'],
             [['address_uz', 'address_ru', 'address_en'], 'string', 'max' => 150],
             [['phone'], PhoneInputValidator::className(), 'region' => ['UZ']],
+            [['email'], 'email'],
             [['location'], 'string'],
             [['phone'], 'string', 'max' => 20],
         ];
@@ -52,6 +54,7 @@ class Address extends \yii\db\ActiveRecord
             'address_ru' => 'Address Ru',
             'address_en' => 'Address En',
             'address' => 'Address',
+            'email' => 'email',
             'location' => 'Location',
         ];
     }

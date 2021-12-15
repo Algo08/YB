@@ -23,41 +23,11 @@ return [
     'Aloqa' => 'Contact',
     'Bo‘limlar' => 'Sections',
     'Batafsil' => 'See more',
-
+    'Email' => 'Email',
+    'To‘liq ism' => 'Full name',
+    'Xabar' => 'Message',
+    'Telefon raqam' => 'Phone number',
+    'Yuborish' => 'Send',
+    'Barcha huquqlar himoyalangan!' => 'All rights reserved!',
+    'Manzil' => 'Location',
 ];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

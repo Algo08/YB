@@ -17,6 +17,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'address_uz')?>
     <?= $form->field($model, 'address_ru')?>
     <?= $form->field($model, 'address_en')?>
+    <?= $form->field($model, 'email')?>
 
     <?= $form->field($model, 'phone')->widget(PhoneInput::className(), [
         'jsOptions' => [

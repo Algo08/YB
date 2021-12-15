@@ -4,14 +4,15 @@
  */
 use yii\bootstrap4\ActiveForm;
 use yii\helpers\Html;
+use borales\extensions\phoneInput\PhoneInput;
 
 ?>
-<div class="container-newsletter">
+<div class="container-newsletter" id="contact">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="title-un">Subscribe Newsletter</h3>
-                <div class="title-un-icon"><i class="fa ion-ios-book-outline"></i></div>
+                <h3 class="title-un"><?=Yii::t('main', 'Aloqa')?></h3>
+                <div class="title-un-icon"><i class="fa ion-ios-contact"></i></div>
                 <p class="title-un-des">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
                     lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in
                     vulputate velit esse molestie consequat, </p>
@@ -23,8 +24,16 @@ use yii\helpers\Html;
 
                 <?= $form->field($model, 'number',['options'=>
                         ['class'=>'newsletter-container wow fadeInUp']])
-                    ->textInput(['maxlength' => true,'class'=>'newsletter-field',
-                    'placeholder'=>$model->getAttributeLabel( 'number' )])->label(false) ?>
+                    ->widget(PhoneInput::className(), [
+                        'defaultOptions'=>[
+                            'class'=>'newsletter-field'
+                        ],
+                        'jsOptions' => [
+                            'allowExtensions' => true,
+                            'onlyCountries' => ['uz'],
+                            'nationalMode' => false
+                        ]
+                    ])->label(false)?>
 
                 <?= $form->field($model, 'email',['options'=>
                         ['class'=>'newsletter-container wow fadeInUp']])

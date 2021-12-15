@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h3 class="title-un">WHO WE ARE</h3>
+                <h3 class="title-un"><?=Yii::t('main', 'Biz haqimizda')?></h3>
                 <div class="title-un-icon"><i class="fa ion-ios-flame-outline"></i></div>
                 <p class="title-un-des">Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
                     lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in

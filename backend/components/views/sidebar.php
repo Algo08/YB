@@ -37,6 +37,26 @@
             <i class="fas fa-fw fa-money-check-alt"></i>
             <span>About</span></a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/opinion')?>">
+            <i class="fas fa-lightbulb"></i>
+            <span>Opinion</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/statistics')?>">
+            <i class="fas fa-stopwatch-20"></i>
+            <span>Statistics</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/gallery')?>">
+            <i class="fas fa-images"></i>
+            <span>Gallery</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/gallery-section')?>">
+            <i class="fas fa-images"></i>
+            <span>Gallery section</span></a>
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
 

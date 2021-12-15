@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use borales\extensions\phoneInput\PhoneInputValidator;
 use Yii;
 
 /**
@@ -34,6 +35,7 @@ class Contact extends \yii\db\ActiveRecord
             [['email', 'full_name', 'text', 'number',], 'required'],
             [['text'], 'string'],
             [['date'], 'safe'],
+            [['number'], PhoneInputValidator::className(), 'region' => ['UZ']],
             [['read'], 'integer'],
             [['email'], 'email'],
             [['email', 'full_name'], 'string', 'max' => 100],
@@ -49,10 +51,10 @@ class Contact extends \yii\db\ActiveRecord
         return [
             'id' => Yii::t('main', 'ID'),
             'email' => Yii::t('main', 'Email'),
-            'full_name' => Yii::t('main', 'Full Name'),
-            'text' => Yii::t('main', 'Text'),
+            'full_name' => Yii::t('main', 'To‘liq ism'),
+            'text' => Yii::t('main', 'Xabar'),
             'date' => Yii::t('main', 'Date'),
-            'number' => Yii::t('main', 'Number'),
+            'number' => Yii::t('main', 'Telefon raqam'),
             'read' => Yii::t('main', 'Read'),
         ];
     }

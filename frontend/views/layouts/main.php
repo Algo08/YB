@@ -50,9 +50,9 @@ AppAsset::register($this);
                         <div id="mobnav-btn"> </div>
                         <?php 
                            $menuItems = [
-                              ['label' => 'Home', 'url' => ['/']],
-                              ['label' => 'About', 'url' => ['/#about']],
-                              ['label' => 'Contact', 'url' => ['/contact']],
+                              ['label' => Yii::t('main', 'Bosh sahifa'), 'url' => ['/']],
+                              ['label' => Yii::t('main', 'Biz haqimizda'), 'url' => ['/#about']],
+                              ['label' => Yii::t('main', 'Aloqa'), 'url' => ['/#contact']],
                            ];
                            $menuItems[] =
                               '<li class="nav-item">'.
@@ -86,71 +86,7 @@ AppAsset::register($this);
 
 
       <!-- Footer area -->
-      <div class="footer-area-container">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-3">
-                  <div class="footer-widget">
-                     <a href="index.html"><img class="footer-logo" src="<?=Yii::$app->homeUrl.'/img/logo.png'?>"
-                           alt="Enfold"></a>
-                     <p>Dow wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl.
-                        Duis autem vel eum iriure dolor in hendrerit.</p>
-                  </div>
-               </div>
-               <div class="col-md-3">
-                  <div class="footer-widget widget_nav_menu">
-                     <h4 class="footer-widget-title">Get In Touch</h4>
-                     <p>Caecenas wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis
-                        nisl.</p>
-                     <div> <i class="ion-ios-location-outline"></i> Moonshine St. 14/05 Light City
-                        <br>
-                        <i class="ion-ios-telephone-outline"></i> 00 (123) 456 78 90
-                        <br>
-                        <i class="ion-paper-airplane"></i> <a href="first.last@email.com"> first.last@email.com</a>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-3">
-                  <div class="footer-widget widget_nav_menu">
-                     <h4 class="footer-widget-title">LINKS</h4>
-                     <ul>
-                        <li class="menu-item"><a href="#"> Brand Creation </a></li>
-                        <li class="menu-item"><a href="#"> Press inquiries</a></li>
-                        <li class="menu-item"><a href="#"> Corporate Identity </a></li>
-                        <li class="menu-item"><a href="#"> Company Analysis </a></li>
-                        <li class="menu-item"><a href="#"> Creative homepage </a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-md-3">
-                  <div class="footer-widget">
-                     <h4 class="footer-widget-title">Flickr stream</h4>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- End Footer area -->
-      <!-- Footer -->
-      <div class="footer-holder">
-         <div class="container">
-            <footer class="site-footer">
-               <div class="row">
-                  <div class="col-md-6">
-                     <p>© Copyright 2016 | <a href="#" target="_blank">Template Stock</a></p>
-                  </div>
-                  <div class="col-md-6">
-                     <ul class="footer-nav">
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Terms</a></li>
-                        <li><a href="#">Privacy</a></li>
-                     </ul>
-                  </div>
-               </div>
-            </footer>
-         </div>
-      </div>
+      <?php echo app\components\Footer::widget()?>
       <!-- End Footer -->
    </div>
    <?php $this->endBody() ?>
