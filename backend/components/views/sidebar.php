@@ -48,14 +48,19 @@
             <span>Statistics</span></a>
     </li>
     <li class="nav-item">
+        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/gallery-section')?>">
+            <i class="fas fa-images"></i>
+            <span>Gallery section</span></a>
+    </li>
+    <li class="nav-item">
         <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/gallery')?>">
             <i class="fas fa-images"></i>
             <span>Gallery</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/gallery-section')?>">
-            <i class="fas fa-images"></i>
-            <span>Gallery section</span></a>
+        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/video')?>">
+            <i class="fas fa-video"></i>
+            <span>Video</span></a>
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">

@@ -27,6 +27,7 @@ class AppAsset extends AssetBundle
         'theme/js/jquery.fitvids.js',
         'theme/js/jquery-ui-1.10.4.custom.min.js',
         'theme/js/jquery.magnific-popup.js',
+        // 'theme/js/SmoothScroll.js',
         'theme/js/main.js'
     ];
     public $depends = [

@@ -159,3 +159,245 @@ a.desc:after {
     max-width: 100%;
     height: auto;
 }
+#gallery > div > a {
+    opacity: 0;
+    position: absolute;
+    color: #000;
+    /* background-color: #000; */
+    font: lighter 2em "Helvetica";
+    text-shadow: 0 -1px 5px #fff, -1px 0px 5px #fff, 0 1px 5px #fff,
+        1px 0px 5px #fff;
+    padding: 2rem;
+    /* mix-blend-mode: difference; */
+    width: 100%;
+    height: 100%;
+    transition: all ease 1s;
+}
+#gallery > div > img {
+    width: 100%;
+    min-height: 100%;
+    transition: all ease 1s;
+}
+#gallery > div:hover img {
+    filter: blur(4px);
+}
+#gallery > div:hover a {
+    opacity: 1;
+}
+#gallery > div {
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#gallery div,
+#gallery a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+[id^="lightbox-"] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    opacity: 0;
+    transition: opacity 450ms ease-in-out;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    z-index: 111111;
+}
+[id^="lightbox-"]:target {
+    opacity: 1;
+    pointer-events: inherit;
+}
+[id^="lightbox-"]:target img {
+    filter: blur(0);
+}
+[id^="lightbox-"] .content {
+    max-width: 90%;
+    position: relative;
+    color: #fff;
+}
+[id^="lightbox-"] .content:hover > a.close {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+[id^="lightbox-"] .content:hover > .title {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+[id^="lightbox-"] .content:hover > .title::after {
+    opacity: 1;
+}
+[id^="lightbox-"] .content > * {
+    transition: all 450ms ease-in-out;
+}
+[id^="lightbox-"] .title {
+    display: block;
+    margin: 0;
+    padding: 1em;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(50%);
+    font-size: 1.5em;
+    opacity: 0;
+}
+[id^="lightbox-"] .title::after {
+    content: " ";
+    background-color: rgba(0, 0, 0, 0.4);
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all 350ms ease-in-out 250ms;
+    opacity: 0;
+    transform-origin: bottom;
+    mix-blend-mode: soft-light;
+}
+[id^="lightbox-"] img {
+    max-height: 90vh;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    filter: blur(50px);
+}
+[id^="lightbox-"] a.close {
+    width: 2em;
+    height: 2em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0, 0);
+    opacity: 0;
+    transform-origin: right top;
+    text-decoration: none;
+    color: #fff;
+}
+[id^="lightbox-"] a.close::after {
+    content: "X";
+}
+.video-gallery {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.video-gallery .gallery-item {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 10px 1%;
+    min-width: 320px;
+    max-width: 580px;
+    max-height: 360px;
+    width: 48%;
+    background: #000;
+    cursor: pointer;
+}
+
+.video-gallery .gallery-item img {
+    position: relative;
+    display: block;
+    opacity: 0.7;
+    width: 105%;
+    height: 300px;
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(-23px, 0, 0);
+    backface-visibility: hidden;
+}
+
+.video-gallery .gallery-item .gallery-item-caption {
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+}
+
+.video-gallery .gallery-item .gallery-item-caption,
+.video-gallery .gallery-item .gallery-item-caption > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-gallery .gallery-item h2 {
+    color: white;
+    font-weight: 300;
+    overflow: hidden;
+    padding: 0.5em 0;
+}
+
+.video-gallery .gallery-item h2,
+.video-gallery .gallery-item p {
+    position: relative;
+    margin: 0;
+    z-index: 10;
+}
+
+.video-gallery .gallery-item p {
+    letter-spacing: 1px;
+    font-size: 68%;
+
+    padding: 1em 0;
+    opacity: 0;
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(10%, 0, 0);
+}
+
+.video-gallery .gallery-item:hover img {
+    opacity: 0.3;
+    transform: translate3d(0, 0, 0);
+}
+
+.video-gallery .gallery-item .gallery-item-caption {
+    text-align: left;
+}
+
+.video-gallery .gallery-item h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 15%;
+    height: 1px;
+    background: #fff;
+
+    transition: transform 0.3s;
+    transform: translate3d(-100%, 0, 0);
+}
+
+.video-gallery .gallery-item:hover h2::after {
+    transform: translate3d(0, 0, 0);
+}
+
+.video-gallery .gallery-item:hover p {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+@media screen and (max-width: 50em) {
+    .video-gallery .gallery-item {
+        display: inline-block;
+        float: none;
+        margin: 10px auto;
+        width: 100%;
+    }
+}
+.vimeo-popup {
+    z-index: 11;
+}

@@ -2,7 +2,7 @@
 
 namespace backend\controllers;
 
-use common\models\Gallery;
+use common\models\Video;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -10,9 +10,9 @@ use yii\filters\VerbFilter;
 use Yii;
 
 /**
- * GalleryController implements the CRUD actions for Gallery model.
+ * VideoController implements the CRUD actions for Video model.
  */
-class GalleryController extends Controller
+class VideoController extends Controller
 {
     /**
      * @inheritDoc
@@ -33,13 +33,13 @@ class GalleryController extends Controller
     }
 
     /**
-     * Lists all Gallery models.
+     * Lists all Video models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Gallery::find(),
+            'query' => Video::find(),
             /*
             'pagination' => [
                 'pageSize' => 50
@@ -58,7 +58,7 @@ class GalleryController extends Controller
     }
 
     /**
-     * Displays a single Gallery model.
+     * Displays a single Video model.
      * @param int $id ID
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -71,19 +71,17 @@ class GalleryController extends Controller
     }
 
     /**
-     * Creates a new Gallery model.
+     * Creates a new Video model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Gallery();
+        $model = new Video();
 
         if ($this->request->isPost) {
             $model->load($this->request->post());
             
-            $model->section = implode(",",$model['sections']);
-            $model['sections'] = null;
             $model->imageFile = \fv\yii\croppie\UploadedFile::getInstance($model, 'imageFile');
 
             if ($model->upload()) {
@@ -103,7 +101,7 @@ class GalleryController extends Controller
     }
 
     /**
-     * Updates an existing Gallery model.
+     * Updates an existing Video model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return mixed
@@ -112,12 +110,9 @@ class GalleryController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-        $model->sections[] = explode(',', $model->section);
 
         if ($this->request->isPost) {
             $model->load($this->request->post());
-            $model->section = $model['sections'] ? implode(",",$model['sections']) : $model->section;
-            $model['sections'] = null;
             
             $model->imageFile = \fv\yii\croppie\UploadedFile::getInstance($model, 'imageFile');
 
@@ -136,7 +131,7 @@ class GalleryController extends Controller
     }
 
     /**
-     * Deletes an existing Gallery model.
+     * Deletes an existing Video model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return mixed
@@ -154,18 +149,18 @@ class GalleryController extends Controller
     }
 
     /**
-     * Finds the Gallery model based on its primary key value.
+     * Finds the Video model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return Gallery the loaded model
+     * @return Video the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Gallery::findOne($id)) !== null) {
+        if (($model = Video::findOne($id)) !== null) {
             return $model;
         }
 
-        throw new NotFoundHttpException(Yii::t('main', 'The requested page does not exist.'));
+        throw new NotFoundHttpException('The requested page does not exist.');
     }
 }

@@ -13,9 +13,9 @@ class Gallery extends Widget
 {
     public function run()
     {
-        // $opinion = \common\models\Opinion::find()->all();
-        // return $this->render('opinion',['opinions'=>$opinion]);
-        return $this->render('gallery');
+        $galleries = \common\models\Gallery::find()->all();
+        $sections = \common\models\GallerySection::find()->where(['status' => true])->all();
+        return $this->render('gallery',['galleries'=>$galleries, 'sections' => $sections]);
     }
 
 }

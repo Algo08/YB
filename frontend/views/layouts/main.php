@@ -50,7 +50,7 @@ AppAsset::register($this);
                         <div id="mobnav-btn"> </div>
                         <?php 
                            $menuItems = [
-                              ['label' => Yii::t('main', 'Bosh sahifa'), 'url' => ['/']],
+                              ['label' => Yii::t('main', 'Bosh sahifa'), 'url' => ['/#']],
                               ['label' => Yii::t('main', 'Biz haqimizda'), 'url' => ['/#about']],
                               ['label' => Yii::t('main', 'Aloqa'), 'url' => ['/#contact']],
                            ];

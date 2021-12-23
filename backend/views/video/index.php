@@ -6,32 +6,36 @@ use yii\widgets\Pjax;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = Yii::t('main', 'Gallery Sections');
+$this->title = 'Videos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="gallery-section-index">
+<div class="video-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a(Yii::t('main', 'Create Gallery Section'), ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Video', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php Pjax::begin(); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'options'=>[
-            'class'=>'table-responsive'
-        ],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'name_uz',
-            'name_ru',
-            'name_en',
-            'status',
+            'text_uz',
+            'text_ru',
+            'text_en',
+            [
+                'attribute' => 'rasm',
+                'format' => 'html',
+                'contentOptions'=>['class'=> 'text-center', 'style'=>'width: 220px'],
+                'value' => function ($data) {
+                    return Html::img(Yii::getAlias('@web').'/..'. $data['image_location'],
+                        ['width' => '100px', 'style'=>['background-color'=>'#393939']]);
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn',
                 'contentOptions'=>['class'=> 'text-center', 'style'=>'width: 160px'],

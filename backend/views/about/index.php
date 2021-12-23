@@ -20,6 +20,9 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
+        'options'=>[
+            'class'=>'table-responsive'
+        ],
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -43,7 +46,28 @@ $this->params['breadcrumbs'][] = $this->title;
             //'main_text_en:ntext',
             //'image_location',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn',
+                'contentOptions'=>['class'=> 'text-center', 'style'=>'width: 160px'],
+                'buttons'=>[
+                    'view'=>function ($url, $model) {
+                        return Html::a('<i class="fa fa-eye mx-1"></i>',\yii\helpers\Url::to(['view','id'=>$model->id]),
+                            ['class' => 'view btn btn-info btn-circle btn-sm']);
+                    },
+                    'update'=>function ($url, $model) {
+                        return Html::a( '<i class="fa fa-pencil-alt mx-1"></i>',\yii\helpers\Url::to(['update','id'=>$model->id]),
+                            ['class' => 'update btn btn-warning btn-circle btn-sm'] );
+                    },
+                    'delete'=>function ($url, $model) {
+                        return Html::a( '<i class="fa fa-trash mx-1"></i>',\yii\helpers\Url::to(['delete','id'=>$model->id]),
+                            ['class' => 'delete btn btn-danger btn-circle btn-sm', 'data-key'=>$model->id,
+                                'data' => [
+                                    'confirm' => 'Are you sure you want to delete this item?',
+                                    'method' => 'post',
+                                ],
+                            ] );
+                    }
+                ],
+            ],
         ],
     ]); ?>
 

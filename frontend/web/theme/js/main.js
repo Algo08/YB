@@ -15,14 +15,14 @@
         $(".fr-slider").fractionSlider({
             fullWidth: true,
             slideTransition: "fade",
-            slideTransitionSpeed: 650,
+            slideTransitionSpeed: 50,
             slideEndAnimation: false,
             controls: false,
             pager: true,
             speedOut: 2600,
             timeout: 6000,
             responsive: true,
-            increase: true,
+            increase: false,
             dimensions: "1170 , 600",
         });
 
@@ -332,4 +332,14 @@
         mobile: false,
     });
     wow.init();
+
+    $(document).ready(function () {
+        $(".video-gallery").magnificPopup({
+            delegate: "a",
+            type: "iframe",
+            gallery: {
+                enabled: true,
+            },
+        });
+    });
 })(jQuery);

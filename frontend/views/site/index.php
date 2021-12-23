@@ -18,6 +18,7 @@ $this->title = 'My Yii Application';
 <?php echo app\components\Opinion::widget()?>
 <?php echo app\components\Gallery::widget()?>
 
+<?php echo app\components\Video::widget()?>
 
 <?php echo app\components\Contact::widget()?>
 

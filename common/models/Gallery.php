@@ -37,6 +37,7 @@ class Gallery extends \yii\db\ActiveRecord
         return [
             [['name_uz', 'name_ru', 'name_en', 'section', 'image_location'], 'required'],
             [['name_uz', 'name_ru', 'name_en', 'section'], 'string', 'max' => 100],
+            [['sections'], 'each'],
             [['image_location'], 'string', 'max' => 150],
         ];
     }
@@ -99,5 +100,18 @@ class Gallery extends \yii\db\ActiveRecord
         } else {
             return false;
         }
+    }
+
+    public function getSectionsName()
+    {
+        $section = explode(",",$this->section);
+        $name = '';
+        $vergul = '';
+        foreach ($section as $key => $value) {
+            $name = $name.$vergul.GallerySection::findOne($value)->name;
+            $vergul = ', ';
+        }
+        return $name;
+
     }
 }
