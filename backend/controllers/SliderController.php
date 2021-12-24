@@ -2,7 +2,7 @@
 
 namespace backend\controllers;
 
-use common\models\slider;
+use common\models\Slider;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -10,7 +10,7 @@ use yii\filters\VerbFilter;
 use Yii;
 
 /**
- * SliderController implements the CRUD actions for slider model.
+ * SliderController implements the CRUD actions for Slider model.
  */
 class SliderController extends Controller
 {
@@ -33,13 +33,13 @@ class SliderController extends Controller
     }
 
     /**
-     * Lists all slider models.
+     * Lists all Slider models.
      * @return mixed
      */
     public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => slider::find(),
+            'query' => Slider::find(),
             /*
             'pagination' => [
                 'pageSize' => 50
@@ -58,7 +58,7 @@ class SliderController extends Controller
     }
 
     /**
-     * Displays a single slider model.
+     * Displays a single Slider model.
      * @param int $id ID
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -71,13 +71,13 @@ class SliderController extends Controller
     }
 
     /**
-     * Creates a new slider model.
+     * Creates a new Slider model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new slider();
+        $model = new Slider();
 
         if ($this->request->isPost) {
             if ($model->load(Yii::$app->request->post())) {
@@ -99,7 +99,7 @@ class SliderController extends Controller
     }
 
     /**
-     * Updates an existing slider model.
+     * Updates an existing Slider model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param int $id ID
      * @return mixed
@@ -127,7 +127,7 @@ class SliderController extends Controller
     }
 
     /**
-     * Deletes an existing slider model.
+     * Deletes an existing Slider model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param int $id ID
      * @return mixed
@@ -145,15 +145,15 @@ class SliderController extends Controller
     }
 
     /**
-     * Finds the slider model based on its primary key value.
+     * Finds the Slider model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param int $id ID
-     * @return slider the loaded model
+     * @return Slider the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = slider::findOne($id)) !== null) {
+        if (($model = Slider::findOne($id)) !== null) {
             return $model;
         }
 
