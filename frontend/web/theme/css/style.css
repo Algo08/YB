@@ -503,7 +503,7 @@ a:focus {
 }
 
 .header-scroll-fixed .brand img {
-  height: 65px;
+  height: 100px;
 }
 
 .header-three {
@@ -6498,6 +6498,7 @@ screen and (max-height: 300px) {
 
 .fraction-slider .slide-bg {
   background-color: #fff;
+  filter: brightness(0.5);
   height: auto !important;
 }
 
