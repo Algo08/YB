@@ -554,11 +554,11 @@ a:focus {
   .brand {
     text-align: center;
     margin: 40px auto 0;
-    width: 100px !important;
+    width: 300px !important;
     height: auto !important;
   }
   .brand img {
-    height: auto !important;
+    height: 300px !important;
   }
 }
 
@@ -830,7 +830,7 @@ body.overflow-hidden-header-three {
 }
 
 .brand img {
-  height: 75px;
+  height: 100px;
 }
 
 .header-style-two .brand {
