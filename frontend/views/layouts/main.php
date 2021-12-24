@@ -43,7 +43,7 @@ AppAsset::register($this);
                   <div class="header-table col-md-12">
                      <div class="brand">
                         <a href="<?=Yii::$app->homeUrl?>">
-                           <img src="<?=\yii\helpers\Url::to('@web/img/logo.png')?>?>" alt="Enfold">
+                           <img src="<?=\yii\helpers\Url::to('@web/img/logo.png')?>" alt="Enfold">
                         </a>
                      </div>
                      <nav id="nav-wrap" class="main-nav">

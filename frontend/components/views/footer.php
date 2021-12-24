@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="footer-widget">
-                    <a href="index.html"><img class="footer-logo" src="<?=Yii::$app->homeUrl.'/img/logo.png'?>"
+                    <a href="index.html"><img class="footer-logo" src="<?=\yii\helpers\Url::to('@web/img/logo.png')?>"
                             alt="Enfold"></a>
                     <p>Dow wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl.
                         Duis autem vel eum iriure dolor in hendrerit.</p>
