@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\slider */
+/* @var $model common\models\Slider */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
@@ -46,12 +46,12 @@ use yii\widgets\ActiveForm;
                             'format' => 'jpeg',
                             'clientOptions' => [
                                 'viewport'=>[
-                                    'width'=>1000,
-                                    'height' => 635,
+                                    'width'=>1382,
+                                    'height' => 450,
                                 ],
                                 'boundary'=>[
-                                    'width'=>1050,
-                                    'height' => 650
+                                    'width'=>1400,
+                                    'height' => 500
                                 ],
                                 'enableExif'=>'true',
                             ],

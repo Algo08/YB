@@ -92,7 +92,7 @@ class Slider extends \yii\db\ActiveRecord
         if ($this->imageFile) {
             $this->imageFile->saveAs('../../frontend/web/img/slider/'. $this->imageFile->baseName . '.' . $this->imageFile->extension);
 
-            Image::crop(Yii::getAlias('@webroot') .'/../../frontend/web/img/slider/'. $this->imageFile->baseName . '.' . $this->imageFile->extension,1000,635)
+            Image::crop(Yii::getAlias('@webroot') .'/../../frontend/web/img/slider/'. $this->imageFile->baseName . '.' . $this->imageFile->extension,1382,450)
                 ->save(Yii::getAlias('../../frontend/web/img/slider/'. $this->imageFile->baseName . '1.' . $this->imageFile->extension), ['quality' => 90]);
 
             unlink(Yii::getAlias('@webroot') .'/../../frontend/web/img/slider/'. $this->imageFile->baseName . '.' . $this->imageFile->extension);
