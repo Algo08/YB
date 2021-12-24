@@ -122,7 +122,7 @@ class SiteController extends Controller
         $model = new \common\models\Contact();
 
         if ($this->request->isPost) {
-            if ($model->load(Yii::$app->request->post())) {
+            if ($model->load(Yii::$app->request->post()) && $model->save()) {
                   Yii::$app->mailer->compose('layouts/text',['model'=>$model])
                     ->setFrom('salohiddin.esanov96@gmail.com')
                     ->setTo('s.esamov@nihol.uz')
