@@ -31,7 +31,7 @@ class ContactController extends \yii\web\Controller
     public function actionContact($id)
     {
         $contact = Contact::findOne($id);
-        return $this->renderAjax('Contact',['contact'=>$contact]);
+        return $this->renderAjax('contact',['contact'=>$contact]);
     }
 
     public function actionReaded($id)
