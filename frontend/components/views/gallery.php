@@ -31,7 +31,7 @@
             <div id="gallery" class="classic-portfolio col-3-portfolio portfolio gallery-portfolio shortc-mp">
                <?php foreach ($galleries as $key => $gallery):?>
                   <div class="project-item <?=str_replace(',',' ',$gallery->section)?>">
-                        <img src="<?=\yii\helpers\Url::to('@web').$gallery->image_location?>" alt="">
+                        <img src="<?=\yii\helpers\Url::to('@web'.$gallery->image_location)?>" alt="">
                         <a href="#lightbox-<?=$key?>"><?=$gallery->name?></a>
                   </div>
                <?php endforeach;?>
@@ -39,7 +39,7 @@
             <?php foreach ($galleries as $key => $gallery):?>
                <div class="lightbox" id="lightbox-<?=$key?>">
                   <div class="content">
-                     <img src="<?=\yii\helpers\Url::to('@web').$gallery->image_location?>" />
+                     <img src="<?=\yii\helpers\Url::to('@web'.$gallery->image_location)?>" />
                      <div class="title"><?=$gallery->name?></div>
                      <a class="close" href="#gallery-section"></a>
                   </div>

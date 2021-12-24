@@ -17,7 +17,7 @@
             <div class="video-gallery">
                <?php foreach ($videos as $key => $video):?>
                <div class="gallery-item">
-                  <img src="<?=\yii\helpers\Url::to('@web').$video->image_location?>"
+                  <img src="<?=\yii\helpers\Url::to('@web'.$video->image_location)?>"
                      alt="North Cascades National Park" />
                   <div class="gallery-item-caption">
                      <div>
