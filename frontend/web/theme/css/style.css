@@ -888,12 +888,16 @@ body.overflow-hidden-header-three {
 .main-nav .sf-menu li a.active {
   color: #8a8f6a;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .main-nav .sf-menu li a.active ul a {
   color: #111111;
 }
-
+.main-nav .head-list.dropdown-menu.with-arrow{
+  width: 100%;
+  min-width: none !important;
+}
 .main-nav .sf-menu ul {
   background-color: #fafafa;
   position: absolute;

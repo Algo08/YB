@@ -116,7 +116,7 @@
             $(this).siblings(".sub-menu").toggleClass("sub-menu-open");
         });
 
-        $("#search-label").click(function () {
+        $("#search-labe l").click(function () {
             $(".search-bar").slideToggle("slow");
         });
 

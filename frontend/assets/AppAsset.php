@@ -18,8 +18,8 @@ class AppAsset extends AssetBundle
         'theme/css/animate.css',
         ];
     public $js = [
-        'theme/js/superfish.js',
         'theme/js/wow.js',
+        'theme/js/superfish.js',
         'theme/js/owl.carousel.min.js',
         'theme/js/jflickrfeed.min.js',
         'theme/js/jquery.fractionslider.min.js',
@@ -27,8 +27,8 @@ class AppAsset extends AssetBundle
         'theme/js/jquery.fitvids.js',
         'theme/js/jquery-ui-1.10.4.custom.min.js',
         'theme/js/jquery.magnific-popup.js',
-        // 'theme/js/SmoothScroll.js',
-        'theme/js/main.js'
+        'theme/js/main.js',
+
     ];
     public $depends = [
         'yii\web\YiiAsset',

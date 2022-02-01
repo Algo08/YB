@@ -29,7 +29,7 @@ use borales\extensions\phoneInput\PhoneInput;
                             'class'=>'newsletter-field'
                         ],
                         'jsOptions' => [
-                            'allowExtensions' => true,
+                            'allowExtensions' => false,
                             'onlyCountries' => ['uz'],
                             'nationalMode' => false
                         ]

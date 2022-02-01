@@ -57,11 +57,11 @@ AppAsset::register($this);
                            $menuItems[] =
                               '<li class="nav-item">'.
                                     MultiLanguageWidget::widget([
-                                             'addCurrentLang' => true, // add current lang
+                                             'addCurrentLang' => false, // add current lang
                                              'calling_controller' => $this->context,
                                              'image_type' => 'classic', // classic or rounded
                                              'link_home' => false, // true or false
-                                             'widget_type' => 'classic', // classic or selector
+                                             'widget_type' => 'selector', // classic or selector
                                              'width' => '20'
                                           ]).
                               '.</li>';
