@@ -84,7 +84,7 @@ class GalleryController extends Controller
             
             $model->section = implode(",",$model['sections']);
             $model['sections'] = null;
-            $model->imageFile = \fv\yii\croppie\UploadedFile::getInstance($model, 'imageFile');
+            $model->imageFile = \yii\web\UploadedFile::getInstance($model, 'imageFile');
 
             if ($model->upload()) {
                 $model->imageFile = null;
@@ -119,7 +119,7 @@ class GalleryController extends Controller
             $model->section = $model['sections'] ? implode(",",$model['sections']) : $model->section;
             $model['sections'] = null;
             
-            $model->imageFile = \fv\yii\croppie\UploadedFile::getInstance($model, 'imageFile');
+            $model->imageFile = \yii\web\UploadedFile::getInstance($model, 'imageFile');
 
             if ($model->upload()) {
                 $model->imageFile = null;

@@ -47,26 +47,7 @@ use yii\widgets\ActiveForm;
         <div class="tab-pane fade" id="rasm" role="tabpanel" aria-labelledby="rasm-tab">
             <div class="text-center mt-3">
                 <?=$form->field($model, 'imageFile')
-                    ->widget(\fv\yii\croppie\Widget::class,
-                        [
-                            'format' => 'jpeg',
-                            'clientOptions' => [
-                                'viewport'=>[
-                                    'width'=>1000,
-                                    'height' => 635,
-                                ],
-                                'boundary'=>[
-                                    'width'=>1050,
-                                    'height' => 650
-                                ],
-                                'enableExif'=>'true',
-                            ],
-                            'rotateCcwLabel' => '<i class="icon-undo"></i> 90&deg',
-                            'rotateCwLabel' => '<i class="icon-rotate-right"></i> 90&deg',
-                            'uploadButtonOptions' => [
-                                'value'=>'test',
-                            ],
-                        ])
+                    ->fileInput()
                     ->label(false);?>
             </div>
         </div>

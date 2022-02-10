@@ -87,15 +87,15 @@ class Gallery extends \yii\db\ActiveRecord
         if ($this->imageFile) {
             $this->imageFile->saveAs('../../frontend/web/img/gallery/'. $this->imageFile->baseName . '.' . $this->imageFile->extension);
 
-            Image::crop(Yii::getAlias('@webroot') .'/../../frontend/web/img/gallery/'. $this->imageFile->baseName . '.' . $this->imageFile->extension,885,643.5)
-                ->save(Yii::getAlias('../../frontend/web/img/gallery/'. $this->imageFile->baseName . '1.' . $this->imageFile->extension), ['quality' => 90]);
+            // Image::crop(Yii::getAlias('@webroot') .'/../../frontend/web/img/gallery/'. $this->imageFile->baseName . '.' . $this->imageFile->extension,false,false)
+            //     ->save(Yii::getAlias('../../frontend/web/img/gallery/'. $this->imageFile->baseName . '1.' . $this->imageFile->extension), ['quality' => 90]);
 
-            unlink(Yii::getAlias('@webroot') .'/../../frontend/web/img/gallery/'. $this->imageFile->baseName . '.' . $this->imageFile->extension);
+            // unlink(Yii::getAlias('@webroot') .'/../../frontend/web/img/gallery/'. $this->imageFile->baseName . '.' . $this->imageFile->extension);
 
             if ($this->image_location && is_file(Yii::getAlias('@webroot').'/../../frontend/web'.$this->image_location)){
                 unlink(Yii::getAlias('@webroot').'/../../frontend/web'.$this->image_location);
             }
-            $this->image_location = '/img/gallery/'. $this->imageFile->baseName . '1.' . $this->imageFile->extension;
+            $this->image_location = '/img/gallery/'. $this->imageFile->baseName . '.' . $this->imageFile->extension;
             return true;
         } else {
             return false;
