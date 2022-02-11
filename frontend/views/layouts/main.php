@@ -90,6 +90,9 @@ AppAsset::register($this);
       <!-- End Footer -->
    </div>
    <?php $this->endBody() ?>
+   <script>
+      $(".lang-selector").removeAttr("data-toggle",'dropdown');
+   </script>
 </body>
 
 </html>

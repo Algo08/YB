@@ -903,12 +903,12 @@ body.overflow-hidden-header-three {
   position: absolute;
   z-index: 6000;
   display: none;
-  min-width: 12em;
+  min-width: 6em;
   /* allow long menu items to determine submenu width */
   *width: 12em;
   /* no auto sub width for IE7, see white-space comment below */
-  top: 118%;
-  left: 0;
+  top: 100%;
+  left: 0%;
   z-index: 99;
   margin: 1px 0;
   padding: 3px 0 5px 0;
@@ -932,7 +932,7 @@ body.overflow-hidden-header-three {
 }
 
 .main-nav .sf-menu ul li {
-  min-width: 225px;
+  min-width: 35px;
   text-align: left;
 }
 
