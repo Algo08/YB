@@ -12,22 +12,23 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'theme/vendor/fontawesome-free/css/all.min.css',
-        'theme/css/sb-admin-2.min.css',
+        'theme/vendors/iconly/bold.css',
+        'theme/vendors/bootstrap-icons/bootstrap-icons.css',
+        'theme/css/bootstrap.css',
+        'theme/css/pages/auth.css',
+        'theme/css/pages/email.css',
+        'theme/css/fileinput.css',
+        'theme/css/app.css',
         'css/site.css',
     ];
     public $js = [
-//        'theme/js/sb-admin-2.min.js',
-//        'theme/vendor/bootstrap/js/bootstrap.bundle.min.js',
-        'theme/vendor/chart.js/Chart.min.js',
-//        'theme/vendor/jquery-easing/jquery.easing.min.js',
-        'theme/js/demo/chart-area-demo.js',
-        'theme/js/demo/chart-bar-demo.js',
-//        'theme/js/demo/chart-pie-demo.js',
-
+//        'theme/js/jquery.js',
+        'theme/vendors/perfect-scrollbar/perfect-scrollbar.min.js',
+        'theme/js/bootstrap.bundle.min.js',
+        'theme/js/pages/horizontal-layout.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap4\BootstrapAsset',
+        'yii\bootstrap5\BootstrapAsset'
     ];
 }

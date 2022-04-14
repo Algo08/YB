@@ -1,79 +1,124 @@
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= Yii::$app->homeUrl?>">
-        <div class="sidebar-brand-icon rotate-n-15">
-            <img src="<?= \yii\helpers\Url::to('@web/user.png')?>" style="width: 45px" alt="">
+<?php
+use yii\bootstrap5\Html;
+use yii\helpers\Url;
+use cinghie\multilanguage\widgets\MultiLanguageWidget;
+?>
+<header class="mb-5">
+    <div class="header-top">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="<?=Url::to('@web/')?>images/logo/logo.png" alt="Logo" srcset=""></a>
+            </div>
+            <div class="header-top-right">
+                <?= MultiLanguageWidget::widget([
+                    'addCurrentLang' => true, // add current lang
+                    'calling_controller' => $this->context,
+                    'image_type'  => 'classic', // classic or rounded
+                    'link_home'   => false, // true or false
+                    'widget_type' => 'classic', // classic or selector
+                    'width'       => '20'
+                ]);?>
+                <div class="dropdown">
+                    <a href="#" class="user-dropdown d-flex dropend" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="avatar avatar-md2">
+                            <img src="<?=Url::to('@web/')?>images/faces/1.jpg" alt="Avatar">
+                        </div>
+                        <div class="text">
+                            <h6 class="user-dropdown-name"><?=Yii::$app->user->identity->username?></h6>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a class="dropdown-item" href="javascript:0">
+                                <?= Html::beginForm(['/site/logout'], 'post')
+                            . Html::submitButton(
+                                '<i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>'.Yii::t('main','Выйти из системы'),
+                                ['class' => 'btn  logout p-0']
+                            )
+                            . Html::endForm()
+                            ?>
+                            </a></li>
+                    </ul>
+                </div>
+                <!-- Burger button responsive -->
+                <a href="#" class="burger-btn d-block d-xl-none">
+                    <i class="bi bi-justify fs-3"></i>
+                </a>
+            </div>
         </div>
-        <div class="sidebar-brand-text mx-2">Visit <sup>sayt</sup></div>
-    </a>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web')?>">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Bosh sahifa</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        News
     </div>
-
-    
-    <li class="nav-item">
-        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/slider')?>">
-            <i class="fas fa-fw fa-money-check-alt"></i>
-            <span>Slider</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/about')?>">
-            <i class="fas fa-fw fa-money-check-alt"></i>
-            <span>About</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/opinion')?>">
-            <i class="fas fa-lightbulb"></i>
-            <span>Opinion</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/statistics')?>">
-            <i class="fas fa-stopwatch-20"></i>
-            <span>Statistics</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/gallery-section')?>">
-            <i class="fas fa-images"></i>
-            <span>Gallery section</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/gallery')?>">
-            <i class="fas fa-images"></i>
-            <span>Gallery</span></a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/video')?>">
-            <i class="fas fa-video"></i>
-            <span>Video</span></a>
-    </li>
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <li class="nav-item">
-        <a class="nav-link" href="<?=\yii\helpers\Url::to('@web/address')?>">
-            <i class="fas fa-map-marker"></i>
-            <span>Address</span></a>
-    </li>
-
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
-
-</ul>
+    <nav class="main-navbar">
+        <div class="container">
+            <ul>
+                <?php if (\Yii::$app->user->can('allows_to_manage_administration_staff')):?>
+                    <li class="menu-item  has-sub">
+                        <a href="#" class='menu-link'>
+                            <i class="bi bi-app"></i>
+                            <span><?=Yii::t('main','Администрирование')?></span>
+                        </a>
+                        <div class="submenu ">
+                            <!-- Wrap to submenu-group-wrapper if you want 3-level submenu. Otherwise remove it. -->
+                            <div class="submenu-group-wrapper">
+                                <ul class="submenu-group">
+                                    <li class="submenu-item  ">
+                                        <a href="<?= Url::to(['/user'])?>" class='submenu-link'><?=Yii::t('main','Профили')?></a>
+                                    </li>
+                                    <li class="submenu-item  ">
+                                        <a href="<?= Url::to(['/group'])?>" class='submenu-link'><?=Yii::t('main','Группа')?></a>
+                                    </li>
+                                    <li class="submenu-item  ">
+                                        <a href="<?= Url::to(['/organization'])?>" class='submenu-link'><?=Yii::t('main','Организации')?></a>
+                                    </li>
+                                    <li class="submenu-item  ">
+                                        <a href="<?= Url::to(['/auth-assignment'])?>" class='submenu-link'><?=Yii::t('main','Права доступа')?></a>
+                                    </li>
+                                    <li class="submenu-item  ">
+                                        <a href="<?= Url::to(['/district'])?>" class='submenu-link'><?=Yii::t('main','Области')?></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                <?php endif;?>
+                <li class="menu-item active has-sub">
+                    <a href="#" class='menu-link'>
+                        <i class="bi bi-pencil-square"></i>
+                        <span><?=Yii::t('main','Обращения')?></span>
+                    </a>
+                    <div class="submenu ">
+                        <!-- Wrap to submenu-group-wrapper if you want 3-level submenu. Otherwise remove it. -->
+                        <div class="submenu-group-wrapper">
+                            <ul class="submenu-group">
+                                <li class="submenu-item  ">
+                                    <a href="<?= Url::to(['/appeal'])?>" class='submenu-link'><?=Yii::t('main','Новые обращения')?></a>
+                                </li>
+                                <li class="submenu-item  ">
+                                    <a href="<?= Url::to(['/appeal',['status'=>2]])?>" class='submenu-link'><?=Yii::t('main','Обращения в обработке')?></a>
+                                </li>
+                                <li class="submenu-item  ">
+                                    <a href="<?= Url::to(['/appeal',['status'=>3]])?>" class='submenu-link'><?=Yii::t('main','Архив обращений')?></a>
+                                </li>
+                                <li class="submenu-item  ">
+                                    <a href="<?= Url::to(['/appeal/create'])?>" class='submenu-link'><?=Yii::t('main','Создать обращение')?></a>
+                                </li>
+                        </div>
+                    </div>
+                </li>
+                <li class="menu-item">
+                    <a href="<?= Url::to(['/citizen/victim'])?>" class='menu-link'>
+                        <i class="bi bi-people"></i>
+                        <span><?=Yii::t('main','Жертвы')?></span>
+                    </a>
+                </li>
+                <li class="menu-item">
+                    <a href="<?= Url::to(['/citizen/perpetrator'])?>" class='menu-link'>
+                        <i class="bi bi-people"></i>
+                        <span><?=Yii::t('main','Правонарушители')?></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

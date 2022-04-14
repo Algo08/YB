@@ -21,7 +21,12 @@ use yii\web\IdentityInterface;
  * @property integer $status
  * @property integer $created_at
  * @property integer $updated_at
+ * @property integer $group
+ * @property integer $organization
  * @property string $password write-only password
+ * 
+ * @property Group $gROUP
+ * @property Organization $oRGANIZATION
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -29,6 +34,9 @@ class User extends ActiveRecord implements IdentityInterface
     const STATUS_INACTIVE = 9;
     const STATUS_ACTIVE = 10;
 
+    
+    public $password;
+    public $repeat_password;
 
     /**
      * {@inheritdoc}
@@ -54,9 +62,56 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
+            [['password', 'username', 'organization','group'], 'required'],
+            [['firstname', 'middlename','lastname', 'password', 'username'], 'string', 'max' => 100],
+            ['password', 'string', 'min' => Yii::$app->params['user.passwordMinLength']],
+            ['repeat_password', 'compare', 'compareAttribute'=>'password', 'skipOnEmpty' => false, 'message'=>Yii::t('main', 'Parollar mos emas')],
+            
+            [['organization','group', 'created_at', 'updated_at'], 'integer'],
             ['status', 'default', 'value' => self::STATUS_INACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE, self::STATUS_DELETED]],
         ];
+    }
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => Yii::t('main', 'ID'),
+            'firstname' => Yii::t('main', 'Фамилия'),
+            'middlename' => Yii::t('main', 'Отчество'),
+            'lastname' => Yii::t('main', 'Имя'),
+            'organization' => Yii::t('main', 'Организации'),
+            'oRGANIZATION' => Yii::t('main', 'Организации'),
+            'gROUP' => Yii::t('main', 'Группа'),
+            'group' => Yii::t('main', 'Группа'),
+            'username' => Yii::t('main','Имя пользователя'),
+            'password' => Yii::t('main','Пароль'),
+            'repeat_password' => Yii::t('main', 'Повторите пароль'),
+            'password_hash' => 'password_hash',
+            'created_at' => Yii::t('main','Дата Регистрации'),
+            'updated_at' => Yii::t('main','Дата обновления')
+        ];
+    }
+
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGROUP()
+    {
+        return Group::findOne($this->organization)->name;
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getORGANIZATION()
+    {
+        return Organization::findOne($this->organization)->name;
     }
 
     /**
@@ -64,7 +119,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentity($id)
     {
-        return static::findOne(['id' => $id, 'status' => self::STATUS_ACTIVE]);
+        return static::findOne(['id' => $id, 'status' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE]]);
     }
 
     /**
@@ -83,7 +138,7 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findByUsername($username)
     {
-        return static::findOne(['username' => $username, 'status' => self::STATUS_ACTIVE]);
+        return static::findOne(['username' => $username, 'status' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE]]);
     }
 
     /**
@@ -100,7 +155,7 @@ class User extends ActiveRecord implements IdentityInterface
 
         return static::findOne([
             'password_reset_token' => $token,
-            'status' => self::STATUS_ACTIVE,
+            'status' => [self::STATUS_ACTIVE, self::STATUS_INACTIVE],
         ]);
     }
 

@@ -10,25 +10,30 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
-    'homeUrl'=>'/visit/admin',
+    'homeUrl'=>'/project',
     'bootstrap' => ['log'],
     'modules' => [],
+    'language'   => 'ru',
+    'sourceLanguage' => 'ru_RU',
     'components' => [
         'assetManager' => [
             'bundles' => [
-                'yii\bootstrap\BootstrapPluginAsset' => [
+                'kartik\form\ActiveFormAsset' => [
+                    'bsDependencyEnabled' => false // do not load bootstrap assets for a specific asset bundle
+                ],
+                'yii\bootstrap5\BootstrapPluginAsset' => [
                     'js'=>[],
                 ],
-                'yii\bootstrap\BootstrapAsset' => [
-                    'css' => [],
+                'yii\bootstrap5\BootstrapAsset' => [
+                     'css' => [],
                 ],
                 'yii\web\JqueryAsset' => [
-                    #'js'=>[]
+                    'js'=>[]
                 ],
             ],
         ],
         'request' => [
-            'baseUrl'=>'/visit/admin',
+            'baseUrl'=>'/project',
             'csrfParam' => '_csrf-backend',
         ],
         'user' => [
@@ -52,8 +57,13 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+            'defaultRoles' => ['guest'],
+        ],
         'urlManager' => [
+            'class' => 'codemix\localeurls\UrlManager',
+            'languages' => ['uz', 'ru', 'en'], // List all supported languages here
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [

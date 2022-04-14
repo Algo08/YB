@@ -6,5 +6,5 @@ IndexIgnore */*
 Options FollowSymlinks
 RewriteEngine on
 RewriteRule ^payme(/.+)?$ payme/web/$1 [S=2]
-RewriteRule ^admin(/.+)?$ backend/web/$1 [S=1]
-RewriteRule ^(.+)?$ frontend/web/$1
+RewriteRule ^admin(/.+)?$ frontend/web/$1 [S=1]
+RewriteRule ^(.+)?$ backend/web/$1

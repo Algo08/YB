@@ -10,7 +10,7 @@ return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'homeUrl'=>'/visit',
+    'homeUrl'=>'/project/asd',
     'controllerNamespace' => 'frontend\controllers',
     'language'   => 'uz',
     'sourceLanguage' => 'uz_UZ',
@@ -30,7 +30,7 @@ return [
             ],
         ],
         'request' => [
-            'baseUrl'=>'/visit',
+            'baseUrl'=>'/project/asd',
             'csrfParam' => '_csrf-frontend',
         ],
         'user' => [

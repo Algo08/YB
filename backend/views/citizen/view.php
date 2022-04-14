@@ -1,31 +1,24 @@
 <?php
 
+
+/* @var $this yii\web\View */
+/* @var $model common\models\Citizen */
+
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\DetailView;
-
-/* @var $this yii\web\View */
-/* @var $model common\models\Appeal */
-
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => Yii::t('main', 'Appeals'), 'url' => ['index']];
+$this->title = $model->full_name;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('main', 'Citizen'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-\yii\web\YiiAsset::register($this);
 ?>
-<div class="appeal-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a(Yii::t('main', 'Update'), ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a(Yii::t('main', 'Delete'), ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => Yii::t('main', 'Are you sure you want to delete this item?'),
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalCenterTitle"><?= Html::encode($this->title) ?>
+    </h5>
+    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+        <i data-feather="x"></i>
+    </button>
+</div>
+<div class="appeal-view modal-body">
 
     <?= DetailView::widget([
         'model' => $model,
@@ -33,71 +26,34 @@ $this->params['breadcrumbs'][] = $this->title;
             'class'=> 'table table-lg',
         ],
         'attributes' => [
-            'id',
-            'date',
-            'oRGANIZATION.name',
+            'lastname',
+            'firstname',
+            'middlename',
+            'birth_date',
+            'pASSPORT.passport',
+            'pASSPORT.PINFL',
+
             [
-                'attribute' => 'cryme_type',
-                'filter'=>Yii::$app->params['cryme_type'],
-                'value' => function ($data) {
-                    return Yii::$app->params['cryme_type'][$data['cryme_type']];
-                },
-            ],
-            [
-                'attribute' => 'country',
+                'attribute' => 'current_country',
                 'filter'=>Yii::$app->params['country'],
                 'value' => function ($data) {
-                    return Yii::$app->params['country'][$data['country']];
+                    return Yii::$app->params['country'][$data['current_country']];
                 },
             ],
             [
-                'attribute'=>'region',
+                'attribute'=>'current_region',
                 'filter'=>ArrayHelper::map(\common\models\Region::find()->asArray()->all(), 'id', 'name_ru'),
                 'value' => function ($data) {
-                    return $data['rEGION']['name_ru'];
+                    return $data['cURRENTREGION']['name_ru'];
                 },
             ],
             [
-                'attribute'=>'district',
+                'attribute'=>'current_district',
                 'filter'=>ArrayHelper::map(\common\models\District::find()->asArray()->all(), 'id', 'name_ru'),
                 'value' => function ($data) {
-                    return $data['dISTRICT']['name_ru'];
-                },
-            ],
-            [
-                'attribute' => 'status',
-                'filter'=>Yii::$app->params['status'],
-                'value' => function ($data) {
-                    return Yii::$app->params['status'][$data['status']];
+                    return $data['cURRENTDISTRICT']['name_ru'];
                 },
             ]
         ],
     ]) ?>
-    <div class="card">
-        <div class="card-header">
-            <h4><?=Yii::t('main','Жертвы')?></h4>
-        </div>
-        <div class="card-content">
-            <?= $this->renderAjax('/citizen/citizen_table', ['appeal_id'=>$model->id,'status'=>1]);?>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            <h4><?=Yii::t('main','Правонарушители')?></h4>
-        </div>
-        <div class="card-content">
-            <?= $this->renderAjax('/citizen/citizen_table', ['appeal_id'=>$model->id,'status'=>2]);?>
-        </div>
-    </div>
-    <div class="card">
-        <div class="card-header">
-            <h4><?=Yii::t('main','Прикрепленные документы')?></h4>
-        </div>
-        <div class="card-content">
-            <?= $this->renderAjax('/document/document_table', ['appeal_id'=>$model->id]);?>
-        </div>
-    </div>
-
-
-
 </div>

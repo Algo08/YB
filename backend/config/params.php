@@ -1,5 +1,6 @@
 <?php
 return [
+    'bsDependencyEnabled' => false,
     'adminEmail' => 'admin@example.com',
-    'bsVersion' => '4.x',
+    'bsVersion' => '5.x',
 ];

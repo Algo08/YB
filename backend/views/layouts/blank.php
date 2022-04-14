@@ -22,7 +22,7 @@ AppAsset::register($this);
 <body class="bg-gradient-primary">
 <?php $this->beginBody() ?>
 
-    <div class="container">
+    <div class="content">
         <?= $content ?>
     </div>
 

@@ -14,61 +14,61 @@ AppAsset::register($this);
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
+
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="<?=Url::to('@web/../frontend/web/theme/img/logo-alt.png')?>" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet" />
+    <script src="/project/theme/js/jquery.js"></script>
+
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <?php $this->endBody() ?>
 
 </head>
+
 <body id="page-top">
-<?php $this->beginBody() ?>
+    <?php $this->beginBody() ?>
 
-<div id="wrapper">
-    <!-- Sidebar -->
-    <?php echo app\components\Sidebar::widget()?>
-    <!-- End of Sidebar -->
+    <div id="app">
+        <div id="main" class="layout-horizontal">
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-    <!-- Main Content -->
-        <div id="content">
+            <!-- Sidebar -->
+            <?php echo app\components\Sidebar::widget()?>
+            <!-- End of Sidebar -->
 
-            <!-- Topbar -->
-            <?php echo app\components\Toolbar::widget()?>
-            <!-- End of Topbar -->
-
-            <!-- Begin Page Content -->
-            <div class="container-fluid">
-                <?= Breadcrumbs::widget([
-                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-                ]) ?>
-                <?= Alert::widget() ?>
-                <?= $content ?>
-            </div>
-            <!-- End of Page Content -->
-        </div>
-
-        <!-- Footer -->
-        <footer class="sticky-footer bg-white">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>&copy; Geostudy <?= date('Y') ?></span>
+            <!-- Content Wrapper -->
+            <div  class="content-wrapper container">
+                <!-- Main Content -->
+                <div id="content">
+                    <!-- Begin Page Content -->
+                    
+                    <nav aria-label="breadcrumb">
+                        <?= Breadcrumbs::widget([
+                            'tag'=>'ol',
+                            'options'=>[
+                                'class' => 'breadcrumb'
+                            ],
+                            'itemTemplate'=>'<li class="breadcrumb-item">{link}</li>',
+                            'activeItemTemplate'=>'<li class="breadcrumb-item active">{link}</li>',
+                            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                        ]) ?>
+                    </nav>
+                    <?= Alert::widget() ?>
+                    <?= $content ?>
+                    <!-- End of Page Content -->
                 </div>
             </div>
-        </footer>
-        <!-- End of Footer -->
+        </div>
     </div>
-</div>
 
+    <?php $this->endBody() ?>
 
-<script src="<?=\yii\helpers\Url::to('@web/theme/js/sb-admin-2.min.js')?>"></script>
-<script src="<?=\yii\helpers\Url::to('@web/theme/vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
-<script src="<?=\yii\helpers\Url::to('@web/theme/vendor/jquery-easing/jquery.easing.min.js')?>"></script>
 </body>
+
 </html>
 <?php $this->endPage() ?>

@@ -20,7 +20,7 @@ $model = new \common\models\Document();
     ])->label(false) ?>
 <?php ActiveForm::end(); ?>
 <div id="document-table">
-    <?= $this->renderAjax('/document/document_table', ['appeal_id'=>$appeal_id]);?>
+    <?= $this->renderAjax('document_table', ['appeal_id'=>$appeal_id]);?>
 </div>
 <?php
 $url = Url::to(['/document/index']);
